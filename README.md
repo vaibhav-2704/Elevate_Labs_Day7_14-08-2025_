@@ -24,6 +24,27 @@ Analyze sales data from a SQLite database using Python, SQL, and Matplotlib to e
 
 ## 📊 SQL Queries Used  
 ```sql
+# Creating table
+sql_runner.execute("""
+CREATE TABLE sales (
+    product TEXT,
+    quantity INTEGER,
+    price REAL
+)
+""")
+# Inserting more sample rows 
+sample_sales_data = [
+    ("Apples", 50, 2.5),
+    ("Bananas", 75, 1.2),
+    ("Cherries", 20, 5.0),
+    ("Dates", 40, 3.0),
+    ("Oranges", 65, 2.0),
+    ("Apples", 30, 2.5),
+    ("Bananas", 40, 1.2),
+    ("Cherries", 25, 5.0),
+    ("Dates", 15, 3.0),
+    ("Oranges", 35, 2.0)
+]
 -- Top Products by Quantity Sold
 SELECT product, SUM(quantity) AS total_quantity
 FROM sales
@@ -41,6 +62,8 @@ ORDER BY date;
 
 * **Console:** Printed aggregated query results.
 * **Chart:** Horizontal bar chart of top-selling products (`sales_chart.png`).
+<img width="757" height="742" alt="10" src="https://github.com/user-attachments/assets/183d1d75-a999-4d35-99c8-a685f1499d3a" />
+
 
 ## 🛠 Tools Used
 
